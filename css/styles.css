@@ -1,0 +1,129 @@
+@font-face {
+  font-family: 'FigtreeMedium';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/assets/fonts/static/Figtree-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'FigtreeExtraBold';
+  font-style: normal;
+  font-weight: 800;
+  src: url('/assets/fonts/static/Figtree-ExtraBold.ttf') format('truetype');
+}
+
+:root {
+  --body-background-color: #f4d04e;
+  --card-background-color: #ffffff;
+  --title-color: #121212;
+  --text-color: #6b6b6b;
+  --hover-color: #f4d04e;
+  --author-color: #3e52a3;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'FigtreeMedium', sans-serif;
+  margin: 0;
+  background-color: var(--body-background-color);
+  display: flex;
+  min-height: 100vh;
+}
+
+p {
+  margin: 0;
+  font-size: clamp(0.75rem, 0.7058rem + 0.188vw, 0.875rem);
+  line-height: 150%;
+  color: var(--title-color);
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  width: min(100%, clamp(20.4375rem, 19.1831rem + 5.3521vw, 24rem));
+  background-color: var(--card-background-color);
+  border: 1px solid var(--title-color);
+  border-radius: 20px;
+  box-shadow: 8px 8px #000000;
+}
+
+.card > img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.category {
+  width: fit-content;
+  padding: 4px 12px;
+  border-radius: 4px;
+  background-color: var(--body-background-color);
+  font-family: 'FigtreeExtraBold', sans-serif;
+}
+
+.title {
+  font-family: 'FigtreeExtraBold', sans-serif;
+  font-size: clamp(1.25rem, 1.162rem + 0.3756vw, 1.5rem);
+  transition: color 0.3s ease-in-out;
+}
+
+.title:hover,
+.title:focus {
+  color: var(--hover-color);
+  cursor: pointer;
+}
+
+.description {
+  font-size: clamp(0.875rem, 0.831rem + 0.1878vw, 1rem);
+  color: var(--text-color);
+}
+
+.user {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.user_name {
+  font-family: 'FigtreeExtraBold', sans-serif;
+  font-size: 14px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 16px 0;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: var(--author-color);
+}

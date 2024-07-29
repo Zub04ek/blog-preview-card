@@ -2,13 +2,13 @@
   font-family: 'FigtreeMedium';
   font-style: normal;
   font-weight: 500;
-  src: url('/assets/fonts/static/Figtree-Medium.ttf') format('truetype');
+  src: url('../assets/fonts/static/Figtree-Medium.ttf') format('truetype');
 }
 @font-face {
   font-family: 'FigtreeExtraBold';
   font-style: normal;
   font-weight: 800;
-  src: url('/assets/fonts/static/Figtree-ExtraBold.ttf') format('truetype');
+  src: url('../assets/fonts/static/Figtree-ExtraBold.ttf') format('truetype');
 }
 
 :root {
@@ -40,7 +40,20 @@ body {
 
 p {
   margin: 0;
+
+  /* Pixel values for min and max are not accessible so I converted the px values to rem values by dividing the px values by 16 (the default browser font size). The preferred value was calculated using this tool https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/#for-those-who-dont-mind-that-edge-case.
+
+  - min viewport width = 375px;
+  - max viewport width = 1440px;
+  - 1 rem = 16px 
+
+ ↑ this conditions are common for all font sizes and width of the card
+
+  in this case
+  - min font size = 12px;
+  - max font size = 14px; */
   font-size: clamp(0.75rem, 0.7058rem + 0.188vw, 0.875rem);
+
   line-height: 150%;
   color: var(--title-color);
 }
@@ -58,7 +71,14 @@ p {
   flex-direction: column;
   gap: 24px;
   padding: 24px;
+
+  /* in this case
+  - min card width = 327px;
+  - max card width = 384px; 
+
+  But also I used min() function to make width of the card more responsive when the viewport width are less then 375px */
   width: min(100%, clamp(20.4375rem, 19.1831rem + 5.3521vw, 24rem));
+  
   background-color: var(--card-background-color);
   border: 1px solid var(--title-color);
   border-radius: 20px;
@@ -87,6 +107,9 @@ p {
 
 .title {
   font-family: 'FigtreeExtraBold', sans-serif;
+  /* in this case
+  - min font size = 20px;
+  - max font size = 24px; */
   font-size: clamp(1.25rem, 1.162rem + 0.3756vw, 1.5rem);
   transition: color 0.3s ease-in-out;
 }
@@ -98,6 +121,9 @@ p {
 }
 
 .description {
+  /* in this case
+  - min font size = 14px;
+  - max font size = 16px; */
   font-size: clamp(0.875rem, 0.831rem + 0.1878vw, 1rem);
   color: var(--text-color);
 }

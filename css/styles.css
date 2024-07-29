@@ -38,7 +38,7 @@ body {
   min-height: 100vh;
 }
 
-p {
+h1, p {
   margin: 0;
 
   /* Pixel values for min and max are not accessible so I converted the px values to rem values by dividing the px values by 16 (the default browser font size). The preferred value was calculated using this tool https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/#for-those-who-dont-mind-that-edge-case.
@@ -78,7 +78,7 @@ p {
 
   But also I used min() function to make width of the card more responsive when the viewport width are less then 375px */
   width: min(100%, clamp(20.4375rem, 19.1831rem + 5.3521vw, 24rem));
-  
+
   background-color: var(--card-background-color);
   border: 1px solid var(--title-color);
   border-radius: 20px;
